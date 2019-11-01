@@ -1,0 +1,29 @@
+#!/bin/bash
+firstline=$(head -n 1 source/changelog.md)
+read -a bar <<< $foo
+${foo[index]}
+version=${splitfirstline[1]}
+echo "You are bulding version" $version
+
+echo 'Do you want to continue? (enter '1' for yes, '0' no)'
+read versioncontinue
+if [ versioncontinue -eq 1 ]
+then
+  echo "OK"
+else
+  echo "Please come back when you are ready"
+fi
+for filename in source/*
+do
+  echo $filename
+done
+if [ "$filename" == "source/secretinfo.md" ]
+then
+  echo "Not copying" $filename
+else
+  cho "copying" $filename
+fi
+cd build/
+# We'll add more code here later
+cd ..
+echo "Build version $version contains:"ls
